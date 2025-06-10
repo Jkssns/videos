@@ -9,25 +9,33 @@
             display: block;
             margin: 10px 0;
         }
+        video {
+            display: none;
+        }
     </style>
 </head>
 <body>
-    <!-- <select name="" id="select">
-        <option value="https://mp-a268227e-62b2-4f41-9a02-f9379fb12ac8.cdn.bspapp.com/videos/1.mp4">SSIS-698 三上悠亞與新有菜與相澤南</option>
-        <option value="
-        https://bbl.cn16.ug.link/ugreen/v1/filemgr/shareDownloadFile?coding=true&share_id=685d5e41a1dd4249bb128444832fd2b7&password=&task_id=d8d34fdf8fbf49b59b69e4ebfcc36d77">FSDSS-644 在香港出生長大的女子 新人 繪麗奈 AV出道 繪麗奈 (素海霖)</option>
-    </select> -->
-    <video controls>
-        <source src="
-        https://bbl.cn16.ug.link/ugreen/v1/filemgr/shareDownloadFile?coding=true&share_id=685d5e41a1dd4249bb128444832fd2b7&password=&task_id=d8d34fdf8fbf49b59b69e4ebfcc36d77" type="video/mp4">
+    <select id="select">
+        <option value="">请选择</option>
+        <option value="1">SSIS-698 三上悠亞與新有菜與相澤南(两个是一样的，明天有空我再改)</option>
+        <option value="2">FSDSS-644 在香港出生長大的女子 新人 繪麗奈 AV出道 繪麗奈 (素海霖)</option>
+    </select>
+    <video id="1" controls poster="./1749555380771.jpg">
+        <source src="https://bbl.cn16.ug.link/ugreen/v1/filemgr/shareDownloadFile?coding=true&share_id=685d5e41a1dd4249bb128444832fd2b7&password=&task_id=d8d34fdf8fbf49b59b69e4ebfcc36d77" type="video/mp4">
     </video>
-    <a href="https://bbl.cn16.ug.link/ugreen/v1/filemgr/shareDownloadFile?coding=true&share_id=685d5e41a1dd4249bb128444832fd2b7&password=&task_id=d8d34fdf8fbf49b59b69e4ebfcc36d77" download>点击下载，从这里下载，不要从视频播放器下载。</a>
+    <video id="2" controls poster="./1749555380775.jpg">
+        <source src="https://bbl.cn16.ug.link/ugreen/v1/filemgr/shareDownloadFile?coding=true&share_id=685d5e41a1dd4249bb128444832fd2b7&password=&task_id=d8d34fdf8fbf49b59b69e4ebfcc36d77" type="video/mp4">
+    </video>
     <script>
-        const v = document.querySelector('video');
         const select = document.querySelector('#select');
-        select.addEventListener('change', (e) => {
-            v.src = e.target.value;
-        });
+        select.onchange = (e) => {
+            document.querySelectorAll('video').forEach(v => {
+                v.style.display = 'none';
+            });
+            if (e.target.value) {
+                document.getElementById(e.target.value).style.display = 'block';
+            }
+        }
     </script>
 </body>
 </html>
