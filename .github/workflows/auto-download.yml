@@ -1,0 +1,60 @@
+name: Download M3U8 File
+
+on:
+  # 可以设置为手动触发或特定事件触发
+  workflow_dispatch:
+    inputs:
+      m3u8_url:
+        description: "M3U8 文件的 URL"
+        required: true
+        default: "https://example.com/stream.m3u8"
+      output_file:
+        description: "输出文件名"
+        required: false
+        default: "downloaded-video.mp4"
+      user_agent:
+        description: "自定义 User-Agent"
+        required: false
+        default: "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36"
+      referer:
+        description: "自定义 Referer"
+        required: false
+        default: "https://example.com/player"
+      cookie:
+        description: "自定义 Cookie"
+        required: false
+        default: "session_id=1234567890"
+
+
+jobs:
+  download:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+      
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: "3.9"
+      
+      - name: Install FFmpeg
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y ffmpeg
+      
+      - name: Download M3U8 file
+        run: |
+          python m3u8_downloader.py --url ${{ github.event.inputs.m3u8_url }} \
+                                    --output ${{ github.event.inputs.output_file }} \
+                                    --user-agent ${{ github.event.inputs.user_agent }} \
+                                    --referer ${{ github.event.inputs.referer }} \
+                                    --cookie ${{ github.event.inputs.cookie }}
+      
+      - name: Upload download result
+        uses: actions/upload-artifact@v3
+        if: success()
+        with:
+          name: downloaded-file
+          path: ${{ github.event.inputs.output_file }}
