@@ -1,68 +1,123 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <style>
-        select, a {
-            display: block;
-            margin: 10px 0;
-        }
-        video {
-            display: none;
-        }
-    </style>
-</head>
-<body>
-    <select id="select">
-        <option value="">请选择</option>
-        <option value="1">SSIS-698 三上悠亞與新有菜與相澤南</option>
-        <option value="2">FSDSS-644 在香港出生長大的女子 新人 繪麗奈 AV出道 繪麗奈 (素海霖)</option>
-        <option value="3">MIMK-138 用辣妹的鮑魚來玩玩 真人改編 同人誌漫畫銷售15萬部！FANZA 3冠達成！超人氣作品真人改編！ 齋藤亞美里</option>
-        <option value="4">IPX-934 「只在今天把太太忘掉…」 在出差地點的假日和睽違一年再次見到的情人連1秒都不想浪費的隨心SEX 桃乃木香奈</option>
-        <option value="5">FSDSS-645 滿滿第一次的性感開發3本番特別編！！ 繪麗奈 (素海霖)</option>
-        <!-- <option value="6">IPZZ-034</option>
-        <option value="7">SSIS-951</option>
-        <option value="8">STARS-804</option>
-        <option value="9">MIDV-185</option>
-        <option value="9">SSIS-804 （图片里有个MIZD-304找不到，这个看起来不错，代替了）</option> -->
-    </select>
-
-    <video id="1" controls poster="./posters/SSIS-698.jpg">
-        <source src="
-        https://bbl.cn16.ug.link/ugreen/v1/filemgr/shareDownloadFile?coding=true&share_id=89c39449e862470983c14aadb6ddc0ea&password=&task_id=cc0e9b1fa4c946228d48674cb7eda03e" type="video/mp4">
-    </video>
-
-    <video id="2" controls poster="./posters/FSDSS-644.jpg">
-        <source src="https://bbl.cn16.ug.link/ugreen/v1/filemgr/shareDownloadFile?coding=true&share_id=685d5e41a1dd4249bb128444832fd2b7&password=&task_id=d8d34fdf8fbf49b59b69e4ebfcc36d77" type="video/mp4">
-    </video>
-
-    <video id="3" controls poster="./posters/MIMK-138.jpg">
-        <source src="
-        https://bbl.cn16.ug.link/ugreen/v1/filemgr/shareDownloadFile?coding=true&share_id=15329c2fe6c74fdcb23b72e6d83ac087&password=&task_id=f0d1bee457024a3c9461721ef6a04cb2" type="video/mp4">
-    </video>
-
-    <video id="4" controls poster="./posters/IPX-934.png">
-        <source src="
-        https://bbl.cn16.ug.link/ugreen/v1/filemgr/shareDownloadFile?coding=true&share_id=7d78371a648a478a9c0796da560f88b2&password=&task_id=82cae604a911475493941000a113fb3b" type="video/mp4">
-    </video>
-
-    <video id="5" controls poster="./posters/FSDSS-645.png">
-        <source src="
-        https://bbl.cn16.ug.link/ugreen/v1/filemgr/shareDownloadFile?coding=true&share_id=9cad6793e63b4af58bb91c3b03f441dc&password=&task_id=0da6f452847f4e19986d44505ff804ea" type="video/mp4">
-    </video>
-
-    <script>
-        const select = document.querySelector('#select');
-        select.onchange = (e) => {
-            document.querySelectorAll('video').forEach(v => {
-                v.style.display = 'none';
-            });
-            if (e.target.value) {
-                document.getElementById(e.target.value).style.display = 'block';
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <style>
+            select,
+            a {
+                display: block;
+                margin: 10px 0;
             }
-        }
-    </script>
-</body>
+
+            video {
+                display: none;
+            }
+        </style>
+    </head>
+
+    <body>
+        <select id="select">
+            <option value="">请选择</option>
+            <option value="1">SSIS-698 三上悠亞與新有菜與相澤南</option>
+            <option value="2">FSDSS-644 在香港出生長大的女子 新人 繪麗奈 AV出道 繪麗奈 (素海霖)</option>
+            <option value="3">MIMK-138 用辣妹的鮑魚來玩玩 真人改編 同人誌漫畫銷售15萬部！FANZA 3冠達成！超人氣作品真人改編！ 齋藤亞美里</option>
+            <option value="4">IPX-934 「只在今天把太太忘掉…」 在出差地點的假日和睽違一年再次見到的情人連1秒都不想浪費的隨心SEX 桃乃木香奈</option>
+            <option value="5">FSDSS-645 滿滿第一次的性感開發3本番特別編！！ 繪麗奈 (素海霖)</option>
+            <option value="6">IPZZ-034 BEAUTY VENUS VIII 櫻空桃 伊藤舞雪 楪可憐</option>
+            <option value="7">SSIS-951 晚上在酒店跟女主管獨處…同房逆NTR 河北彩花</option>
+            <option value="8">STARS-804 隨著本能絡合的極上內衣與精油4本番 神木麗</option>
+            <option value="9">MIDV-185 被電車痴漢集團弄到墮落的我 宮下玲奈</option>
+            <option value="10">SSIS-804 新任教師 被人渣同事們下媚藥 被抽插到想死的程度 淫亂覺醒性交 山手梨愛（图片里有个MIZD-304找不到，这个看起来不错，代替了）</option>
+        </select>
+
+        <video id="1" controls poster="./posters/SSIS-698.jpg">
+            <source
+                src="
+        https://bbl.cn16.ug.link/ugreen/v1/filemgr/shareDownloadFile?coding=true&share_id=89c39449e862470983c14aadb6ddc0ea&password=&task_id=cc0e9b1fa4c946228d48674cb7eda03e"
+                type="video/mp4"
+            />
+        </video>
+
+        <video id="2" controls poster="./posters/FSDSS-644.jpg">
+            <source src="https://bbl.cn16.ug.link/ugreen/v1/filemgr/shareDownloadFile?coding=true&share_id=685d5e41a1dd4249bb128444832fd2b7&password=&task_id=d8d34fdf8fbf49b59b69e4ebfcc36d77" type="video/mp4" />
+        </video>
+
+        <video id="3" controls poster="./posters/MIMK-138.jpg">
+            <source
+                src="
+        https://bbl.cn16.ug.link/ugreen/v1/filemgr/shareDownloadFile?coding=true&share_id=15329c2fe6c74fdcb23b72e6d83ac087&password=&task_id=f0d1bee457024a3c9461721ef6a04cb2"
+                type="video/mp4"
+            />
+        </video>
+
+        <video id="4" controls poster="./posters/IPX-934.png">
+            <source
+                src="
+        https://bbl.cn16.ug.link/ugreen/v1/filemgr/shareDownloadFile?coding=true&share_id=7d78371a648a478a9c0796da560f88b2&password=&task_id=82cae604a911475493941000a113fb3b"
+                type="video/mp4"
+            />
+        </video>
+
+        <video id="5" controls poster="./posters/FSDSS-645.png">
+            <source
+                src="
+        https://bbl.cn16.ug.link/ugreen/v1/filemgr/shareDownloadFile?coding=true&share_id=9cad6793e63b4af58bb91c3b03f441dc&password=&task_id=0da6f452847f4e19986d44505ff804ea"
+                type="video/mp4"
+            />
+        </video>
+
+        <video id="6" controls poster="./posters/IPZZ-034.png">
+            <source
+                src="
+        https://bbl.cn16.ug.link/ugreen/v1/filemgr/shareDownloadFile?coding=true&share_id=233b28e240b3451ea0b6827e0b774e74&password=&task_id=e2bcd7e64f5b42b891ea90f5d3c365ff"
+                type="video/mp4"
+            />
+        </video>
+
+        <video id="7" controls poster="./posters/SSIS-951.png">
+            <source
+                src="
+        https://bbl.cn16.ug.link/ugreen/v1/filemgr/shareDownloadFile?coding=true&share_id=05969bc589cd49ac94213108efdf2b3a&password=&task_id=b184bde92e2b458392d026a9c5730c06"
+                type="video/mp4"
+            />
+        </video>
+
+        <video id="8" controls poster="./posters/STARS-804.png">
+            <source
+                src="
+        https://bbl.cn16.ug.link/ugreen/v1/filemgr/shareDownloadFile?coding=true&share_id=f612549b1bdc4474aa836c55ec365d38&password=&task_id=9680f5d422514bb8a0968fcf01a4ddeb"
+                type="video/mp4"
+            />
+        </video>
+
+        <video id="9" controls poster="./posters/MIDV-185.png">
+            <source
+                src="
+        https://bbl.cn16.ug.link/ugreen/v1/filemgr/shareDownloadFile?coding=true&share_id=eb5625da3706466d8e94ee9673d28d30&password=&task_id=42bb647dc3a64016a23b2db1e350fab4"
+                type="video/mp4"
+            />
+        </video>
+
+        <video id="10" controls poster="./posters/SSIS-804.png">
+            <source
+                src="
+        https://bbl.cn16.ug.link/ugreen/v1/filemgr/shareDownloadFile?coding=true&share_id=16f3ae9da09844b9943fbc850dc75fd8&password=&task_id=cfa0fe5e40dd4123b1ad44b4f7d44f5b"
+                type="video/mp4"
+            />
+        </video>
+
+        <script>
+            const select = document.querySelector('#select');
+            select.onchange = e => {
+                document.querySelectorAll('video').forEach(v => {
+                    v.style.display = 'none';
+                });
+                if (e.target.value) {
+                    document.getElementById(e.target.value).style.display = 'block';
+                }
+            };
+        </script>
+    </body>
 </html>
