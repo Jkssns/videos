@@ -10,6 +10,10 @@
             display: block;
             margin: 10px 0;
         }
+
+        video {
+            display: none;
+        }
     </style>
 </head>
 
@@ -79,6 +83,7 @@
             if (e.target.value) {
                 video.src = data[e.target.value - 1].src;
                 video.poster = data[e.target.value - 1].poster;
+                video.style.display = 'block';
             }
         };
     </script>
