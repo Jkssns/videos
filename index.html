@@ -111,12 +111,16 @@
 
         <script>
             const select = document.querySelector('#select');
+            const videos = document.querySelectorAll('video');
+            const allSrc = Array.from(videos).map(v => v.querySelector('source').src);
             select.onchange = e => {
                 document.querySelectorAll('video').forEach(v => {
                     v.style.display = 'none';
+                    v.src = '';
                 });
                 if (e.target.value) {
                     document.getElementById(e.target.value).style.display = 'block';
+                    document.getElementById(e.target.value).src = allSrc[e.target.value - 1];
                 }
             };
         </script>
