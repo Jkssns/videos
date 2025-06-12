@@ -81,9 +81,9 @@
 
         select.onchange = e => {
             if (e.target.value) {
-                video.src = data[e.target.value - 1].src;
-                video.poster = data[e.target.value - 1].poster;
                 video.style.display = 'block';
+                video.poster = data[e.target.value - 1].poster;
+                video.src = data[e.target.value - 1].src;
             }
         };
     </script>
