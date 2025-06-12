@@ -32,7 +32,7 @@
             <option value="10">SSIS-804 新任教師 被人渣同事們下媚藥 被抽插到想死的程度 淫亂覺醒性交 山手梨愛（图片里有个MIZD-304找不到，这个看起来不错，代替了）</option>
         </select>
 
-        <video id="1" controls preload="metadata"poster="./posters/SSIS-698.jpg">
+        <video id="1" controls abc="./abcs/SSIS-698.jpg">
             <source
                 src="
         https://bbl.cn16.ug.link/ugreen/v1/filemgr/shareDownloadFile?coding=true&share_id=d850463420bc4f1dbc5434b77074f02b&password=&task_id=94048d6c4b0a4a238124fc9b7d62c59c"
@@ -40,12 +40,12 @@
             />
         </video>
 
-        <video id="2" controls preload="metadata" poster="./posters/FSDSS-644.jpg">
+        <video id="2" controls  abc="./abcs/FSDSS-644.jpg">
             <source src="https://bbl.cn16.ug.link/ugreen/v1/filemgr/shareDownloadFile?coding=true&share_id=7839a37d34b141e3adb4012a9f460f1e&password=&task_id=0f6ace2b28a14b2ab97d7a3be988bf5c
 " type="video/mp4" />
         </video>
 
-        <video id="3" controls preload="metadata" poster="./posters/MIMK-138.jpg">
+        <video id="3" controls  abc="./abcs/MIMK-138.jpg">
             <source
                 src="
         https://bbl.cn16.ug.link/ugreen/v1/filemgr/shareDownloadFile?coding=true&share_id=15329c2fe6c74fdcb23b72e6d83ac087&password=&task_id=f0d1bee457024a3c9461721ef6a04cb2"
@@ -53,7 +53,7 @@
             />
         </video>
 
-        <video id="4" controls preload="metadata" poster="./posters/IPX-934.png">
+        <video id="4" controls  abc="./abcs/IPX-934.png">
             <source
                 src="
         https://bbl.cn16.ug.link/ugreen/v1/filemgr/shareDownloadFile?coding=true&share_id=7d78371a648a478a9c0796da560f88b2&password=&task_id=82cae604a911475493941000a113fb3b"
@@ -61,7 +61,7 @@
             />
         </video>
 
-        <video id="5" controls preload="metadata" poster="./posters/FSDSS-645.png">
+        <video id="5" controls  abc="./abcs/FSDSS-645.png">
             <source
                 src="
         https://bbl.cn16.ug.link/ugreen/v1/filemgr/shareDownloadFile?coding=true&share_id=9cad6793e63b4af58bb91c3b03f441dc&password=&task_id=0da6f452847f4e19986d44505ff804ea"
@@ -69,7 +69,7 @@
             />
         </video>
 
-        <video id="6" controls preload="metadata" poster="./posters/IPZZ-034.png">
+        <video id="6" controls  abc="./abcs/IPZZ-034.png">
             <source
                 src="
         https://bbl.cn16.ug.link/ugreen/v1/filemgr/shareDownloadFile?coding=true&share_id=233b28e240b3451ea0b6827e0b774e74&password=&task_id=e2bcd7e64f5b42b891ea90f5d3c365ff"
@@ -77,7 +77,7 @@
             />
         </video>
 
-        <video id="7" controls preload="metadata" poster="./posters/SSIS-951.png">
+        <video id="7" controls  abc="./abcs/SSIS-951.png">
             <source
                 src="
         https://bbl.cn16.ug.link/ugreen/v1/filemgr/shareDownloadFile?coding=true&share_id=05969bc589cd49ac94213108efdf2b3a&password=&task_id=b184bde92e2b458392d026a9c5730c06"
@@ -85,7 +85,7 @@
             />
         </video>
 
-        <video id="8" controls preload="metadata" poster="./posters/STARS-804.png">
+        <video id="8" controls  abc="./abcs/STARS-804.png">
             <source
                 src="
         https://bbl.cn16.ug.link/ugreen/v1/filemgr/shareDownloadFile?coding=true&share_id=f612549b1bdc4474aa836c55ec365d38&password=&task_id=9680f5d422514bb8a0968fcf01a4ddeb"
@@ -93,7 +93,7 @@
             />
         </video>
 
-        <video id="9" controls preload="metadata" poster="./posters/MIDV-185.png">
+        <video id="9" controls  abc="./abcs/MIDV-185.png">
             <source
                 src="
         https://bbl.cn16.ug.link/ugreen/v1/filemgr/shareDownloadFile?coding=true&share_id=eb5625da3706466d8e94ee9673d28d30&password=&task_id=42bb647dc3a64016a23b2db1e350fab4"
@@ -101,7 +101,7 @@
             />
         </video>
 
-        <video id="10" controls preload="metadata" poster="./posters/SSIS-804.png">
+        <video id="10" controls  abc="./abcs/SSIS-804.png">
             <source
                 src="
         https://bbl.cn16.ug.link/ugreen/v1/filemgr/shareDownloadFile?coding=true&share_id=16f3ae9da09844b9943fbc850dc75fd8&password=&task_id=cfa0fe5e40dd4123b1ad44b4f7d44f5b"
@@ -113,11 +113,16 @@
             const select = document.querySelector('#select');
             const videos = document.querySelectorAll('video');
             const allSrc = Array.from(videos).map(v => v.querySelector('source').src);
-            select.onchange = e => {
-                document.querySelectorAll('video').forEach(v => {
+            const hideVideo = () => {
+                videos.forEach(v => {
                     v.style.display = 'none';
                     v.src = '';
                 });
+            }
+            hideVideo()
+ 
+            select.onchange = e => {
+                hideVideo()
                 if (e.target.value) {
                     document.getElementById(e.target.value).style.display = 'block';
                     document.getElementById(e.target.value).src = allSrc[e.target.value - 1];
